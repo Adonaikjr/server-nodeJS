@@ -6,11 +6,13 @@
   "author": "Adonaikjr",
   "description": "new backend",
   "scripts": {
-    "dev":"node ./src/server.js"
+    "dev": "nodemon ./src/server.js"
   },
   "dependencies": {
     "express": "^4.18.1"
+    
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
-
-
