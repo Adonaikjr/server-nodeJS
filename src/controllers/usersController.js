@@ -1,4 +1,4 @@
-class usersController {
+class UsersController {
     /**
      * 5 metodos no maximo para cada controller.
      * 
@@ -9,6 +9,12 @@ class usersController {
      * delete - DELETE para remover um registro.
      * 
      */
+    create(request, response) {
+        const {name, email, password} = request.body;
+
+        response.json({name, email, password});
+    }
+
 }
 
-module.exports = usersController
+module.exports = UsersController;
