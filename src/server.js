@@ -1,22 +1,33 @@
 const express = require ('express')
 
-const app = express();
+const routes = require ('./routes')
 
-app.get('/message/:id/:user', ( request, response) => {
+const app = express();
+/*app.get('/message/:id/:user', ( request, response) => {
     response.send(`
     mensagem ID: ${request.params.id}
     mensagem USER: ${request.params.user}
     `);
-});
+});*/
 
-app.get('/users', (request, response)=>{
+/*app.get('/users', (request, response)=>{
     const { page, limit } = request.query;
 
     response.send(`
     PAGE:${page}.
     LIMIT:${limit}
     `)
-})
+})*/
+app.use(express.json());
+
+app.use(routes);
+/*
+app.post ('/users', (request, response)=>{
+    const { name, email, password } = request.body;
+
+    response.json(`users: ${name}, email: ${email}, senha: ${password}`);
+});
+*/
 
 
 const PORT = 3000;
